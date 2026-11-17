@@ -1,0 +1,15 @@
+<!doctype html><meta charset="utf-8">
+<style>body{width:430px;font:13px sans-serif;margin:8px}button{margin:2px}#list{max-height:260px;overflow:auto}
+.m{border-bottom:1px solid #ddd;padding:3px 0}.URGENT{color:#c00;font-weight:bold}.IMPORTANT{color:#d70}.NOTICE{color:#06c}
+input,select{width:100%;box-sizing:border-box;margin:2px 0}</style>
+<div id="status">…</div>
+<button id="load">Load channels</button><button id="start">Start</button><button id="stop">Stop</button><button id="now">Run now</button><button id="ai">Classify</button><button id="export">Export JSON</button>
+<div id="chs"></div>
+<details><summary>Settings</summary>
+<select id="provider"><option>claude</option><option>openai</option></select>
+<input id="model" placeholder="model (e.g. claude-haiku-5-5 / gpt-4o-mini)">
+<input id="apiKey" type="password" placeholder="API key">
+<input id="interval" type="number" placeholder="interval (minutes)" value="5">
+<button id="save">Save</button></details>
+<h4>Deadlines</h4><div id="dl"></div><h4>Messages</h4><div id="list"></div>
+<script src="popup.js"></script>

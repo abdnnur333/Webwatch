@@ -1,0 +1,16 @@
+{
+  "manifest_version": 3,
+  "name": "WebWatch",
+  "version": "0.1.0",
+  "description": "General-purpose page monitor with AI classification (Discord adapter first)",
+  "permissions": ["storage", "alarms", "notifications", "tabs"],
+  "host_permissions": ["https://discord.com/*", "https://api.anthropic.com/*", "https://api.openai.com/*"],
+  "background": { "service_worker": "background.js" },
+  "content_scripts": [{
+    "matches": ["https://discord.com/*"],
+    "js": ["adapters/discord.js", "content.js"],
+    "run_at": "document_idle"
+  }],
+  "action": { "default_popup": "popup.html" },
+  "icons": { "48": "icon.png" }
+}
